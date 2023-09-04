@@ -1,0 +1,52 @@
+.body{
+    margin: 0%;
+}
+
+.cajaPadre{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    box-sizing: border-box; 
+    justify-content: center;   
+}
+
+.cajaHija{
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+    width: 10%;
+    margin: 40px;
+    justify-content: space-between;
+}
+
+.peliculas{
+    width: 100%;
+    justify-content: center;
+    margin: 15px;
+    padding: 20%;
+}
+
+.generos{
+    text-align: center;
+    font-weight: bold;
+    line-height: 30px;
+}
+
+.cajaHija2{
+    display: flex;
+    flex-direction: row;
+    height: 20%;
+    width: 20%;
+    margin: 80px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cajaHija3{
+    display: flex;
+    flex-direction: row;
+    height: 17%;
+    width: 12%;
+    margin: 40px;
+    justify-content: space-between;
+}
