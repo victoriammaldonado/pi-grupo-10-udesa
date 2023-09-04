@@ -92,3 +92,31 @@
     background-color: black;
     margin-top: 1px;
 }
+
+  /*Formato para los detalles de las peliculas*/
+
+  .portada{
+    width: 30%;
+    height: 30%;
+    margin: 20px;
+  }
+
+  .titulo{
+        font-size: 100px;
+        font-family: 'Oswald', sans-serif;
+        font-weight: bold;
+        color:white
+  }
+
+  .body2{
+    background-color: rgb(31, 30, 30);
+  }
+
+  .parrafo{
+    color: white;
+    font-size: 20px;
+  }
+
+  .listaDesordenada{
+    list-style-type: none;
+  }
