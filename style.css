@@ -36,7 +36,7 @@
 
 .cajaHija{
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     padding: 20px;
    margin: 15px;
 }
@@ -44,6 +44,7 @@
 .peliculas{
     display: flex;
     width: 160px;
+    height: 250px;
     padding: 15px;
     justify-content: center;
     background-color: #462036;
@@ -58,15 +59,10 @@
     font-family: 'Oswald', sans-serif;
 }
 
-.cajaHija2{
-    display: flex;
-    flex-direction: row;
-    height: 17%;
-    width: 12%;
-    margin: 40px;
-    justify-content: space-between;
-    margin-top: 0px;
-    margin-bottom: 5px;
+.tituloPelicula{
+    text-align: center;
+    color: white;
+
 }
 
 
