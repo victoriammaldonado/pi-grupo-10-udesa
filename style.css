@@ -18,6 +18,14 @@
     
 }
 
+.contenedor-input{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    margin: 5px 0px;
+}
+
 .cajaPadre{
     display: flex;
     background-color: rgba(31, 30, 30, 0.796);  
