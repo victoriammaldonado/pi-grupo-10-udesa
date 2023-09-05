@@ -17,6 +17,14 @@
     
 }
 
+.contenedor-input{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: right;
+    margin: 5px 0px;
+}
+
 .cajaPadre{
     display: flex;
     flex-direction: column;
