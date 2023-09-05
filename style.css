@@ -1,5 +1,6 @@
 .body{
     margin: 0%;
+    background-color: black;
 }
 
 .logo{
@@ -19,37 +20,33 @@
 
 .cajaPadre{
     display: flex;
-    flex-direction: column;
-    background-color: rgb(31, 30, 30);  
+    background-color: rgba(31, 30, 30, 0.796);  
+    justify-content: center;
+    flex-wrap: wrap;
     
 }
 
 .cajaHija{
     display: flex;
     flex-direction: row;
-    height: 17%;
-    width: 12%;
-    margin: 40px;
-    margin-top: 0px;
-    margin-bottom: 5px;
-    justify-content: space-between;
-    box-sizing: border-box;
+    padding: 20px;
+   margin: 15px;
 }
 
 .peliculas{
-    width: 100%;
+    display: flex;
+    width: 160px;
+    padding: 15px;
     justify-content: center;
-    margin: 15px;
-    padding: 20%;
     background-color: #462036;
+    
 }
 
 .generos{
     text-align: center;
     font-weight: bold;
-    font-size: 40px;
-    line-height: none;
-    color: white;
+    font-size: 40px; 
+    color: rgb(255, 255, 255);
     font-family: 'Oswald', sans-serif;
 }
 
@@ -64,16 +61,7 @@
     margin-bottom: 5px;
 }
 
-.cajaHija3{
-    display: flex;
-    flex-direction: row;
-    height: 17%;
-    width: 12%;
-    margin: 40px;
-    justify-content: space-between;
-    margin-top: 0px;
-    margin-bottom: 5px;
-}
+
 
 
 .footer{
