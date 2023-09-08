@@ -71,9 +71,6 @@ background-color: rgb(0, 0, 0);
 
 }
 
-
-
-
 .footer{
     text-align: center;
     font-size: 20px;
@@ -118,3 +115,21 @@ background-color: rgb(0, 0, 0);
   .listaDesordenada{
     list-style-type: none;
   }
+
+
+  .fav{
+      width: 30%;
+      align-items: color;
+      margin-left: 1%;
+  }
+
+  /*Busqueda*/
+
+  .busqueda{
+    text-align: center;
+    font-weight: bold;
+    font-size: 60px; 
+    color: rgb(255, 255, 255);
+    font-family: 'Oswald', sans-serif;
+  }
+
