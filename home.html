@@ -13,12 +13,22 @@
             <img class="logo" src="./img/2.png" art="Logo">
         
             <!--acá el buscador-->
-        
-            <div class="contenedor-input">
-                <label for="buscador"></label>
-                <input type="text" name="buscador" id="buscador" value="" required>
+            <form class="contenedor-input" action="./busqueda.html" method="get">
+                <div class="contenedor-input">
+                     <label for="buscador"></label>
+                     <span class="buscar">Buscar</span><input type="text" name="buscador" id="buscador" value="" required>
+                  </div>
+            </form>
+            
+            <!--Aca el menú>-->
+            <div>
+              <ul class="menu">
+                <li class="menu"> <a class="menu" href="./home.html">Home  </a> </li>
+                <li class="menu"><a class="menu" href="./genero.html">Géneros </a></li>
+                <li class="menu"><a class="menu" href="./fav.html">Favoritos</a></li> 
+              </ul>
             </div>
-    
+            
          </header>
     </section>
     <main class="main">
@@ -52,6 +62,7 @@
             </article>
        
         </section>
+
 
         
       <h2 class="generos">Series populares</h2>
