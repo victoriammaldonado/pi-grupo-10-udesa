@@ -133,3 +133,143 @@ background-color: rgb(0, 0, 0);
   .fav {
     margin: 3%;
   }
+
+  /*Aca empieza el media querie del responsive*/
+
+  @media (max-width : 420px) {
+    .main{
+        margin: 0%;
+        background-color: black;
+    }
+    
+    .body{
+    margin: 0%;
+    background-color: rgb(0, 0, 0);
+    }
+    
+    .logo{
+        width: 12%;
+        height: 36%;
+    }
+    
+    .header{
+        align-items: center;
+        width: 100%;
+        background-color: black;
+        margin-bottom: 1px;
+        
+    }
+    
+    .contenedor-input{
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: right;
+        margin: 5px 15px;
+    }
+    
+    .cajaPadre{
+        display: flex;
+        background-color: rgba(31, 30, 30, 0.796);  
+        justify-content: center;
+        flex-wrap: wrap;
+        
+    }
+    
+    .cajaHija{
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+       margin: 15px;
+       align-items: center;
+    }
+    
+    .peliculas{
+        display: flex;
+        width: 160px;
+        height: 250px;
+        padding: 15px;
+        justify-content: center;
+        background-color: #462036;
+        
+    }
+    
+    .generos{
+        text-align: center;
+        font-weight: bold;
+        font-size: 40px; 
+        color: rgb(255, 255, 255);
+        font-family: 'Oswald', sans-serif;
+    }
+    
+    .tituloPelicula{
+        text-align: center;
+        color: white;
+    
+    }
+    
+    
+    
+    
+    .footer{
+        text-align: center;
+        font-size: 20px;
+        line-height: none;
+        color: white;
+        font-family: 'Oswald', sans-serif;
+    }
+    
+    .fondo{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        background-color: black;
+        margin-top: 1px;
+    }
+    
+      /*Formato para los detalles de las peliculas*/
+    
+      .portada{
+        display: flex;
+        justify-self: center;
+        width: 30%;
+        height: 30%;
+        margin: 3%;
+      }
+    
+      .titulo{
+            font-size: 120%;
+            font-family: 'Oswald', sans-serif;
+            font-weight: bold;
+            color:white;
+            margin: 3%;
+      }
+    
+      .body2{
+        background-color: rgb(31, 30, 30);
+      }
+    
+      .parrafo{
+        color: white;
+        font-size: 20px;
+        text-decoration: none;
+      }
+    
+      .listaDesordenada{
+        list-style-type: none;
+      }
+    
+      .menu {
+        display: flex;
+        justify-content:center;
+        text-decoration: none;
+        color: aliceblue;
+        padding: 0%;
+        margin: 1%;
+      }
+    
+      .fav {
+        margin: 3%;
+      }
+  }
