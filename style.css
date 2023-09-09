@@ -1,8 +1,6 @@
 .main{
     margin: 0%;
     background-color: black;
-    border-bottom: solid 1px white;
-    border-top: solid 1px white;
 }
 
 .body{
@@ -16,24 +14,11 @@ background-color: rgb(0, 0, 0);
 }
 
 .header{
-    display: flex;
-    justify-content: center;
     align-items: center;
     width: 100%;
     background-color: black;
     margin-bottom: 1px;
     
-}
-
-.menu{
-    text-decoration: none;
-    display: flex;
-    list-style-type: none;
-    margin: 8px;
-    color: aliceblue;
-    padding-inline-start: 0px;
-    
-
 }
 
 .contenedor-input{
@@ -66,7 +51,7 @@ background-color: rgb(0, 0, 0);
     height: 250px;
     padding: 15px;
     justify-content: center;
-    background-color: #6e2873a1;
+    background-color: #462036;
     
 }
 
@@ -83,6 +68,9 @@ background-color: rgb(0, 0, 0);
     color: white;
 
 }
+
+
+
 
 .footer{
     text-align: center;
@@ -104,16 +92,19 @@ background-color: rgb(0, 0, 0);
   /*Formato para los detalles de las peliculas*/
 
   .portada{
+    display: flex;
+    justify-self: center;
     width: 30%;
     height: 30%;
-    margin: 20px;
+    margin: 3%;
   }
 
   .titulo{
         font-size: 100px;
         font-family: 'Oswald', sans-serif;
         font-weight: bold;
-        color:white
+        color:white;
+        margin: 3%;
   }
 
   .body2{
@@ -123,29 +114,22 @@ background-color: rgb(0, 0, 0);
   .parrafo{
     color: white;
     font-size: 20px;
+    text-decoration: none;
   }
 
   .listaDesordenada{
     list-style-type: none;
   }
 
-  .fav{
-      width: 30%;
-      align-items: color;
-      margin-left: 1%;
+  .menu {
+    display: flex;
+    justify-content:center;
+    text-decoration: none;
+    color: aliceblue;
+    padding: 0%;
+    margin: 1%;
   }
 
-  /*Busqueda*/
-
-  .busqueda{
-    text-align: center;
-    font-weight: bold;
-    font-size: 60px; 
-    color: rgb(255, 255, 255);
-    font-family: 'Oswald', sans-serif;
-  }
-  
-  .buscar{
-    color: white;
-    font-family: 'Oswald', sans-serif;
+  .fav {
+    margin: 3%;
   }
