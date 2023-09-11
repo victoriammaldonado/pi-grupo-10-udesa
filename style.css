@@ -63,6 +63,14 @@ background-color: rgb(0, 0, 0);
     font-family: 'Oswald', sans-serif;
 }
 
+.busqueda{
+    text-align: center;
+    font-weight: bold;
+    font-size: 40px; 
+    color: rgb(255, 255, 255);
+    font-family: 'Oswald', sans-serif;
+}
+
 .tituloPelicula{
     text-align: center;
     color: white;
@@ -195,6 +203,14 @@ background-color: rgb(0, 0, 0);
     }
     
     .generos{
+        text-align: center;
+        font-weight: bold;
+        font-size: 40px; 
+        color: rgb(255, 255, 255);
+        font-family: 'Oswald', sans-serif;
+    }
+
+    .busqueda{
         text-align: center;
         font-weight: bold;
         font-size: 40px; 
