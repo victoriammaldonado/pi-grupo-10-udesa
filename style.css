@@ -163,12 +163,19 @@ background-color: rgb(0, 0, 0);
     margin: 3%;
   }
 
+ 
+
   /*Aca empieza el media querie del responsive*/
 
-  @media (max-width : 420px) {
+  @media (max-width : 420px) 
+  
+  {
+   
     .main{
         margin: 0%;
         background-color: black;
+        border-bottom: 1px solid white;
+        border-top:1px solid white ;
     }
     
     .body{
@@ -182,18 +189,19 @@ background-color: rgb(0, 0, 0);
     }
     
     .header{
+        display: flex;
         align-items: center;
         width: 100%;
         background-color: black;
         margin-bottom: 1px;
+        flex-direction: row;
         
     }
     
     .contenedor-input{
-        width: 100%;
+        width: 60%;
         display: flex;
-        justify-content: space-between;
-        align-items: right;
+        justify-content: center;
         margin: 5px 15px;
     }
     
@@ -202,6 +210,7 @@ background-color: rgb(0, 0, 0);
         background-color: rgba(31, 30, 30, 0.796);  
         justify-content: center;
         flex-wrap: wrap;
+        border-bottom: solid 3px black;
         
     }
     
@@ -234,23 +243,27 @@ background-color: rgb(0, 0, 0);
     .busqueda{
         text-align: center;
         font-weight: bold;
-        font-size: 80px; 
+        font-size: 40px; 
         color: rgb(255, 255, 255);
         font-family: 'Oswald', sans-serif;
     }
     
+    .buscar{
+        text-align: right;
+        font-size: 15px;
+        color: rgb(255, 255, 255);
+        font-family: 'Oswald', sans-serif;
+      }      
+
     .tituloPelicula{
         text-align: center;
         color: white;
     
     }
     
-    
-    
-    
     .footer{
         text-align: center;
-        font-size: 20px;
+        font-size: 10px;
         line-height: none;
         color: white;
         font-family: 'Oswald', sans-serif;
@@ -265,6 +278,23 @@ background-color: rgb(0, 0, 0);
         margin-top: 1px;
     }
     
+    /*Formato para detalles */
+
+
+   .lista_generos {
+   
+    color: aliceblue;
+    padding: 0%;
+   
+    font-size: 30px;
+    text-decoration: none;
+    list-style-type: none;
+   
+
+
+  }
+
+
       /*Formato para los detalles de las peliculas*/
     
       .portada{
@@ -299,11 +329,13 @@ background-color: rgb(0, 0, 0);
     
       .menu {
         display: flex;
-        justify-content:center;
+        justify-content:right;
         text-decoration: none;
         color: aliceblue;
         padding: 0%;
-        margin: 1%;
+        margin: 2%;
+        width: 90%;
+        font-size: 9px;
       }
     
       .fav {
