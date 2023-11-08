@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>Favoritos</title>
 </head>
 <body class="body">
@@ -14,10 +14,14 @@
            <!--acá el buscador-->
            <form class="contenedor-input" action="./busqueda.html" method="get">
             <div class="contenedor-input">
-                 <label for="buscador"></label>
-                 <span class="buscar">Buscar</span><input type="text" name="buscador" id="buscador" value="" required>
-              </div>
-            </form>
+                <label for="buscador"></label>
+                <span class="buscar">
+                    <form class ="buscar">
+                        <button type='submit'>Buscar</button>
+                    </form>
+                </span><input type="text" name="buscador" id="buscador" value="" required>
+            </div>
+         </form>
 
             <div>
                 <ul class="menu">
@@ -122,8 +126,9 @@
     
     <footer class="fondo">
         <section>
-            <p class="footer">Maxima Aresi, Victoria Maldonado y Bernardita Montero</p>
+            <p class="footer">Maxima Aresi, Victoria Maldonado y Bernardita Montero </p>
         </section>
+        <img class = "logo2" src="./img/tmdb.jpg" alt="logo api">
     </footer>  
     
 </body>
