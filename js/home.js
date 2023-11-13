@@ -49,7 +49,7 @@ fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${acaVaLaAPIKey}`)
 
 let populares = document.querySelector('.cajaPadre3')
 
-fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${acaVaLaAPIKey}`)
+fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${acaVaLaAPIKey}`)
 .then(function(response){
     return response.json();
 })

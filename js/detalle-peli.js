@@ -3,7 +3,6 @@ let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
 let id = queryStringObj.get('id');
 let url = `https://api.themoviedb.org/3/movie/${id}?api_key=${acaVaLaAPIKey}`
-let url2 = `https://api.themoviedb.org/3/tv/${id}?api_key=${acaVaLaAPIKey}`
 let portada = document.querySelector('.portada')
 let titulo = document.querySelector('.titulo')
 let parrafo1 = document.querySelector('.parrafo1')
@@ -13,31 +12,34 @@ let parrafo4 = document.querySelector('.parrafo4')
 let parrafo5 = document.querySelector('.parrafo5')
 
 
-let recomendaciones= `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${acaVaLaAPIKey}`;
-console.log(recomendaciones);
-fetch(recomendaciones)
-.then (function(response){
-    return response.json()
-})
-.then (function(data) {
-    console.log(data);
-    recomendacionesDisplay.style.display="block";
-    let reco= data.results;
-    let contenido= "";
-    for (let index = 0; index < array.length; index++) {
-        contenido+= `<article class="cajaHija">
-            <a href="./series.html?id=${reco[index].id}"><img class="peliculas" src="https://image.tmdb.org/t/p/w500/${reco[index].poster_path}" alt="${reco[index].name}"></a>
-            <h3 class="tituloPelicula"><strong>${reco[index].name}</strong></h3><h4 class="tituloPelicula">${reco[index].first_air_date}</h4>
-        </article>`
-        
-    }
-    recoDisplay.innerHTML=contenido;
-    return data
-})
-.catch (function(error){
-    console.log(error)
-})
-        
+let conteiner = document.querySelector(".conteiner-reco")
+let boton= document.querySelector(".recomendaciones")
+let recomedacionesDisplay= document.querySelector(".recomenda")
+boton.addEventListener("click", function (e) {
+    let recomendaciones = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${acaVaLaAPIKey}`;
+    fetch(recomendaciones)
+    .then (function(response){
+        return response.json()
+    })
+    .then (function(data) {
+        console.log(data);
+        conteiner.style.display="block";
+        let contenido= "";
+        for (let index = 0; index < data.results.length; index++) {
+            contenido+= `<article class="cajaHija">
+                <a href="./series.html?id=${data.results[index].id}"><img class="peliculas" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="${data.results[index].title}"></a>
+                <h3 class="tituloPelicula"><strong>${data.results[index].title}</strong></h3><h4 class="tituloPelicula">${data.results[index].release_date}</h4>
+            </article>`
+            
+        }
+        recomedacionesDisplay.innerHTML=contenido;
+    })
+    .catch (function(error){
+        console.log(error)
+    })
+})      
+
+
 
 fetch(url)
     .then(function (response) {
@@ -54,7 +56,7 @@ fetch(url)
         titulo.innerText = data.title;
         parrafo1.innerText += " " + data.vote_average;
         parrafo2.innerText += " " + data.release_date;
-        parrafo3.innerText += " " + data.runtime;
+        parrafo3.innerText += " Tiene " + data.runtime + " minutos";
         parrafo4.innerText +=" " +  data.overview;
         parrafo5.innerText +=" " + generos;
 
@@ -62,7 +64,4 @@ fetch(url)
     .catch(function (error) {
         console.log(error)
     });
-
-
-
 
