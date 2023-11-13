@@ -157,7 +157,7 @@ height: 36px;
     border-top:1px solid white ;
   }
 
-  .parrafo{
+  .parrafo ,.parrafo1 , .parrafo2  , .parrafo3 , .parrafo4 , .parrafo5{
     color: white;
     font-size: 20px;
     text-decoration: none;

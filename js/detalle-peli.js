@@ -4,6 +4,40 @@ let queryStringObj = new URLSearchParams(queryString);
 let id = queryStringObj.get('id');
 let url = `https://api.themoviedb.org/3/movie/${id}?api_key=${acaVaLaAPIKey}`
 let url2 = `https://api.themoviedb.org/3/tv/${id}?api_key=${acaVaLaAPIKey}`
+let portada = document.querySelector('.portada')
+let titulo = document.querySelector('.titulo')
+let parrafo1 = document.querySelector('.parrafo1')
+let parrafo2 = document.querySelector('.parrafo2')
+let parrafo3 = document.querySelector('.parrafo3')
+let parrafo4 = document.querySelector('.parrafo4')
+let parrafo5 = document.querySelector('.parrafo5')
+
+
+let recomendaciones= `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${acaVaLaAPIKey}`;
+console.log(recomendaciones);
+fetch(recomendaciones)
+.then (function(response){
+    return response.json()
+})
+.then (function(data) {
+    console.log(data);
+    recomendacionesDisplay.style.display="block";
+    let reco= data.results;
+    let contenido= "";
+    for (let index = 0; index < array.length; index++) {
+        contenido+= `<article class="cajaHija">
+            <a href="./series.html?id=${reco[index].id}"><img class="peliculas" src="https://image.tmdb.org/t/p/w500/${reco[index].poster_path}" alt="${reco[index].name}"></a>
+            <h3 class="tituloPelicula"><strong>${reco[index].name}</strong></h3><h4 class="tituloPelicula">${reco[index].first_air_date}</h4>
+        </article>`
+        
+    }
+    recoDisplay.innerHTML=contenido;
+    return data
+})
+.catch (function(error){
+    console.log(error)
+})
+        
 
 fetch(url)
     .then(function (response) {
@@ -11,27 +45,18 @@ fetch(url)
     })
     .then(function (data) {     
         console.log(data)
-        let documento = document.querySelector('.detallepelicula')
-        let generos = ""
+        let generos = "";
         for (let index = 0; index < data.genres.length; index++) {
-            generos += `
-            <a class="linkcruzados" href="./genero.html?id=${data.genres[index].id}">${data.genres[index].name}</a>`
+            generos += `${data.genres[index].name}`
 
         }
-        documento.innerHTML = `<img class="portada" src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.title}">
-    <form action="./fav.html" method="get">
-                <div>
-                    <button type="otro" class="fav">Favoritos ❤️</button>
-                </div>
-            </form>
-    <h1 class="titulo">${data.title}</h1>
-    <ul class="listaDesordenada">
-        <li class="parrafo"><strong>Calificación:</strong> ${data.vote_average} </li> 
-        <li class="parrafo"><strong>Estreno:</strong> La fecha de estreno es ${data.release_date} </li>
-        <li class="parrafo"><strong>Duración:</strong> La pelicula dura ${data.runtime} minutos </li>
-        <li class="parrafo"><strong>Sinopsis:</strong>${data.overview}</li>
-        <li class="parrafo"><strong>Género:</strong> ${generos} </li>
-    </ul>`
+        portada.src = `https://image.tmdb.org/t/p/w500${data.poster_path}`;
+        titulo.innerText = data.title;
+        parrafo1.innerText += " " + data.vote_average;
+        parrafo2.innerText += " " + data.release_date;
+        parrafo3.innerText += " " + data.runtime;
+        parrafo4.innerText +=" " +  data.overview;
+        parrafo5.innerText +=" " + generos;
 
     })
     .catch(function (error) {
@@ -41,29 +66,3 @@ fetch(url)
 
 
 
-fetch(url2)
-    .then(function (response) {
-        return response.json();
-    })
-    .then(function (data) {
-        console.log(data)
-        let documento = document.querySelector('.detallepelicula')
-        documento.innerHTML = `<img class="portada" src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.title}">
-    <form action="./fav.html" method="get">
-                <div>
-                    <button type="otro" class="fav">Favoritos ❤️</button>
-                </div>
-            </form>
-    <h1 class="titulo">${data.name}</h1>
-    <ul class="listaDesordenada">
-        <li class="parrafo"><strong>Calificación:</strong>  </li> 
-        <li class="parrafo"><strong>Estreno:</strong> La fecha de estreno es ${data.first_air_date} </li>
-        <li class="parrafo"><strong>Duración:</strong> La serie tiene  ${data.number_of_seasons} temporadas y ${data.number_of_episodes} episodios </li>
-        <li class="parrafo"><strong>Sinopsis:</strong>${data.overview}</li>
-        <li class="parrafo"><strong>Género:</strong> <a class="linkcruzados" href="./genero.html"> ${data.genres[0].name}</a></li>
-    </ul>`
-
-    })
-    .catch(function (error) {
-        console.log(error)
-    });
