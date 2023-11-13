@@ -12,7 +12,14 @@ fetch(url)
 .then(function(data){     
     console.log(data)
     let documento = document.querySelector('.detalleserie')
-    
+
+            let generos = ""
+            for (let index = 0; index < data.genres.length; index++) {
+                generos += `
+                <a class="linkcruzados" href="./genero.html?id=${data.genres[index].id}">${data.genres[index].name}</a>`
+
+            }
+            
             documento.innerHTML = `<img class="portada" src="https://image.tmdb.org/t/p/w500/${data.poster_path}" alt="${data.name}">
 
             <form action="./fav.html" method="get">
@@ -24,11 +31,11 @@ fetch(url)
             <h1 class="titulo">${data.name}</h1>
 
             <ul class="listaDesordenada">
-                <li class="parrafo"><strong>Calificación:</strong></li>
+                <li class="parrafo"><strong>Calificación:</strong> ${data.vote_average}</li>
                 <li class="parrafo"><strong>Estreno:</strong> La fecha de estreno es ${data.first_air_date}  </li>
                 <li class="parrafo"><strong>Duración:</strong> La serie tiene  ${data.number_of_seasons} temporadas y ${data.number_of_episodes} episodios</li>
                 <li class="parrafo"><strong>Sinopsis:</strong> ${data.overview} </li>
-                <li class="parrafo"><strong>Género:</strong> <a class='linkcruzados' href="./genero.html"> ${data.genres[0].name}</a></li>
+                <li class="parrafo"><strong>Género:</strong>${generos}</li>
             </ul>`
 })
 .catch(function(error){
