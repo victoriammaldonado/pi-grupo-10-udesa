@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,84 +8,61 @@
     <link rel="stylesheet" href="./css/style.css">
 
 </head>
+
 <body class="body">
     <section class="header">
-            <header class="header">
+        <header class="header">
             <img class="logo" src="./img/2.png" art="Logo">
-        
+
             <!--acá el buscador-->
-        
+
             <form class="contenedor-input" action="./busqueda.html" method="get">
                 <div class="contenedor-input">
                     <label for="buscador"></label>
                     <span class="buscar">
-                        <form class ="buscar">
+                        <form class="buscar">
                             <button type='submit'>Buscar</button>
                         </form>
                     </span><input type="text" name="buscador" id="buscador" value="" required>
                 </div>
-             </form>
-            
+            </form>
+
             <!--Aca el menú>-->
             <div>
                 <ul class="menu">
-                <li class="menu"> <a class="menu" href="./home.html">Home  </a> </li>
-                <li class="menu"><a class="menu" href="./detalle.html">Géneros </a></li>
-                <li class="menu"><a class="menu" href="./fav.html">Favoritos</a></li> 
+                    <li class="menu"> <a class="menu" href="./home.html">Home </a> </li>
+                    <li class="menu"><a class="menu" href="./detalle.html">Géneros </a></li>
+                    <li class="menu"><a class="menu" href="./fav.html">Favoritos</a></li>
                 </ul>
 
             </div>
-            </header>
+        </header>
     </section>
+
+    <h2 class="generos">Géneros peliculas</h2>
+
     <main class="main">
-        <h2 class="generos">Géneros</h2>
-      <section class="cajaPadre">
-            <article class="cajaHija">
-            <ul class="lista_generos">
-                    <li class="lista_generos"> <a class="lista_generos" href="./genero.html">Accion </a> </li>
-            </ul>
-            </article>
-      </section>
-      <section class="cajaPadre">
-        <article class="cajaHija">
-        <ul class="lista_generos">
-                <li class="lista_generos"><a class="lista_generos" href="./genero.html">Romance </a></li>
-                
-        </ul>
-        </article>
-  </section>
-  <section class="cajaPadre">
-    <article class="cajaHija">
-    <ul class="lista_generos">
+
+        <section class="lista_pelis">
+
             
-            <li class="lista_generos"><a class="lista_generos" href="./genero.html">Familiares</a></li> 
-           
-    </ul>
-    </article>
-</section>
-<section class="cajaPadre">
-    <article class="cajaHija">
-    <ul class="lista_generos">
-            
-            <li class="lista_generos"><a class="lista_generos" href="./genero.html">Drama </a></li>
-           
-    </ul>
-    </article>
-</section>
-<section class="cajaPadre">
-    <article class="cajaHija">
-    <ul class="lista_generos">
-           
-            <li class="lista_generos"><a class="lista_generos" href="./genero.html">Comedia </a></li>
-    </ul>
-    </article>
-</section>
+        </section>
+<h2 class="generos2">Géneros series</h2>
+        <section id="lista_series">
+
+        </section>
+
+        
+       
     </main>
     <footer class="fondo">
         <section>
             <p class="footer">Maxima Aresi, Victoria Maldonado y Bernardita Montero </p>
         </section>
-        <img class = "logo2" src="./img/logo-tmdb.png" alt="logo api">
-    </footer> 
+        <img class="logo2" src="./img/logo-tmdb.png" alt="logo api">
+    </footer>
+
+    <script src="./js/detalle.js"></script>
 </body>
+
 </html>
