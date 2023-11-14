@@ -9,7 +9,7 @@ let parrafo1 = document.querySelector('.parrafo1')
 let parrafo2 = document.querySelector('.parrafo2')
 let parrafo3 = document.querySelector('.parrafo3')
 let parrafo4 = document.querySelector('.parrafo4')
-let parrafo5 = document.querySelector('.parrafo5')
+let parrafo5 = document.querySelector('.linkcruzados')
 
 
 let conteiner = document.querySelector(".conteiner-reco")
@@ -25,9 +25,9 @@ boton.addEventListener("click", function (e) {
         console.log(data);
         conteiner.style.display="block";
         let contenido= "";
-        for (let index = 0; index < data.results.length; index++) {
+        for (let index = 0; index < 5; index++) {
             contenido+= `<article class="cajaHija">
-                <a href="./series.html?id=${data.results[index].id}"><img class="peliculas" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="${data.results[index].title}"></a>
+                <a href="./detalle-peli.html?id=${data.results[index].id}"><img class="peliculas" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="${data.results[index].title}"></a>
                 <h3 class="tituloPelicula"><strong>${data.results[index].title}</strong></h3><h4 class="tituloPelicula">${data.results[index].release_date}</h4>
             </article>`
             
@@ -52,13 +52,13 @@ fetch(url)
             generos += `${data.genres[index].name}`
 
         }
-        portada.src = `https://image.tmdb.org/t/p/w500${data.poster_path}`;
+        portada.src = `https://image.tmdb.org/t/p/w500/${data.poster_path}`;
         titulo.innerText = data.title;
         parrafo1.innerText += " " + data.vote_average;
         parrafo2.innerText += " " + data.release_date;
         parrafo3.innerText += " Tiene " + data.runtime + " minutos";
         parrafo4.innerText +=" " +  data.overview;
-        parrafo5.innerText +=" " + generos;
+        parrafo5.innerText += " " + generos;
 
     })
     .catch(function (error) {
