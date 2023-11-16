@@ -3,7 +3,7 @@ let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
 let buscador = queryStringObj.get('buscador');
 let busqueda = `https://api.themoviedb.org/3/search/movie?api_key=${acaVaLaAPIKey}&query=${buscador}`
-let documento = document.querySelector(".cajaPadre")
+let documento = document.querySelector(".busqueda")
 let error = document.querySelector(".sinBusqueda")
 
 fetch(busqueda)

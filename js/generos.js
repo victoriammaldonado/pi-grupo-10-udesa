@@ -17,12 +17,11 @@ fetch(url)
 
         let contenido = "";
         for (let index = 0; index < 5; index++) {
-            contenido +=  `<section class="cajaPadre">
-                                        <article class="cajaHija">
+            contenido +=  `<section class="lista_pelis">
                                             <ul class="lista_generos">
-                                                <li class="lista_generos"> <a class="lista_generos" href="./genero.html"></a>${data.genres[index].name} </li>
+                                                <a class="lista_generos" href="./detalle.html"><li class="lista_generos">${data.genres[index].name} </li> </a> 
                                             </ul>
-                                        </article>
+                                        
                                     </section>`
         }
 
@@ -42,13 +41,12 @@ fetch(url)
 
         let contenido = "";
         for (let index = 0; index < 5; index++) {
-            contenido +=  `<section class="cajaPadre">
-                                        <article class="cajaHija">
-                                            <ul class="lista_generos">
-                                                <li class="lista_generos"> <a class="lista_generos" href="./genero.html"></a>${data.genres[index].name} </li>
-                                            </ul>
-                                        </article>
-                                    </section>`
+            contenido +=   `<section class="lista_series">
+                                <ul class="lista_generos">
+                                    <a class="lista_generos" href="./detalle.html"><li class="lista_generos">${data.genres[index].name} </li> </a> 
+                                </ul>
+        
+                    </section>`
         }
 
         lista_series.innerHTML = contenido;
