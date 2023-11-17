@@ -36,7 +36,7 @@ fetch(video)
 
 let conteiner = document.querySelector(".conteiner-reco");
 let boton= document.querySelector(".recomendaciones");
-let recomedacionesDisplay= document.querySelector(".recomenda")
+let recomendacionesDisplay= document.querySelector(".recomenda")
 boton.addEventListener("click", function (e) {
     let recomendaciones = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${acaVaLaAPIKey}`;
     fetch(recomendaciones)
@@ -54,7 +54,7 @@ boton.addEventListener("click", function (e) {
             </article>`
             
         }
-        recomedacionesDisplay.innerHTML=contenido;
+        recomendacionesDisplay.innerHTML=contenido;
     })
     .catch (function(error){
         console.log(error)

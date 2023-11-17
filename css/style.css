@@ -24,9 +24,9 @@ height: 36px;
 }
 
 .trailers{
-display: flex;
-align-items: center;
-color: aliceblue;
+  display: flex;
+  align-items: center;
+  color: aliceblue;
 }
 
 .header{

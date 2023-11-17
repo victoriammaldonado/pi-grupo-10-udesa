@@ -14,7 +14,7 @@ let parrafo5 = document.querySelector('.linkcruzados')
 
 let conteiner = document.querySelector(".conteiner-reco")
 let boton= document.querySelector(".recomendaciones")
-let recomedacionesDisplay= document.querySelector(".recomenda")
+let recomendacionesDisplay= document.querySelector(".recomenda")
 boton.addEventListener("click", function (e) {
     let recomendaciones = `https://api.themoviedb.org/3/tv/${id}/recommendations?api_key=${acaVaLaAPIKey}`;
     fetch(recomendaciones)
@@ -32,7 +32,7 @@ boton.addEventListener("click", function (e) {
             </article>`
             
         }
-        recomedacionesDisplay.innerHTML=contenido;
+        recomendacionesDisplay.innerHTML=contenido;
     })
     .catch (function(error){
         console.log(error)
@@ -49,7 +49,7 @@ fetch(video)
 })
 .then(function(data){
     console.log(data.results);
-    seccionvideo.innerHTML= `<iframe width="560" height="315" src="https://www.youtube.com/embed/${data.results[0].key}?si=xOwmvX8g3mpcwA9I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+    seccionvideo.innerHTML= `<iframe class = "trailers" width="560" height="315" src="https://www.youtube.com/embed/${data.results[0].key}?si=xOwmvX8g3mpcwA9I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
     if (video == null){
         return 'No hay trailers disponibles'
     }else{
