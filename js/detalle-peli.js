@@ -70,7 +70,7 @@ fetch(url)
         console.log(data)
         let generos = "";
         for (let index = 0; index < data.genres.length; index++) {
-            generos += `<li><a class="linkcruzados" href="./detalle.html">${data.genres[index].name}</a></li>`
+            generos += `<li><a class="linkcruzados" href="./generos.html">${data.genres[index].name}</a></li>`
 
         }
         portada.src = `https://image.tmdb.org/t/p/w500/${data.poster_path}`;
