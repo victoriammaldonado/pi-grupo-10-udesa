@@ -1,6 +1,6 @@
 let acaVaLaAPIKey = '73bbcaff8fd928767c5142a00f422fa2'
 
-let pelicula = document.querySelector('.cajaPadre');
+let pelicula = document.querySelector('#carruselPeliculas');
 fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${acaVaLaAPIKey}`)
 .then(function(response){
     return response.json();
@@ -9,13 +9,11 @@ fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${acaVaLaAPIKey}`)
     console.log(data.results);
 
     let contenido = "";
-    for (let index = 0; index < 5; index++) {
-        contenido += `<article class="cajaHija"> 
+    for (let index = 0; index < 10; index++) {
+        contenido += `<li class=""> 
         <a href="./detalle-peli.html?id=${data.results[index].id}"><img class="peliculas" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="${data.results[index].title}"></a>
           <h3 class="tituloPelicula"><strong>${data.results[index].title}</strong></h3> <h4 class="tituloPelicula">${data.results[index].release_date}</h4>
-          
-
-    </article>`
+    </li>`
     }
     pelicula.innerHTML = contenido;
     
@@ -25,7 +23,7 @@ fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${acaVaLaAPIKey}`)
     return ;
 });
 
-let serie = document.querySelector('.cajaPadre2')
+let serie = document.querySelector('#carruselPeliculas2')
 
 fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${acaVaLaAPIKey}`)
 .then(function(response){
@@ -34,11 +32,11 @@ fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${acaVaLaAPIKey}`)
 .then(function(data){
     console.log(data.results);
     let contenido = "";
-    for (let index = 0; index < 5; index++){
-        contenido += `<article class="cajaHija">
+    for (let index = 0; index < 10; index++){
+        contenido += `<li class="">
             <a href="./series.html?id=${data.results[index].id}"><img class="peliculas" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="${data.results[index].name}"></a>
             <h3 class="tituloPelicula"><strong>${data.results[index].name}</strong></h3><h4 class="tituloPelicula">${data.results[index].first_air_date}</h4>
-        </article>`
+        </li>`
     }
 
     serie.innerHTML = contenido;
@@ -47,7 +45,7 @@ fetch(`https://api.themoviedb.org/3/tv/popular?api_key=${acaVaLaAPIKey}`)
     return ;
 });
 
-let populares = document.querySelector('.cajaPadre3')
+let populares = document.querySelector('#carruselPeliculas3')
 
 fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${acaVaLaAPIKey}`)
 .then(function(response){
@@ -56,11 +54,11 @@ fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${acaVaLaAPIKey}`)
 .then(function(data){
     console.log(data.results);
     let contenido = "";
-    for (let index = 0; index < 5; index++){
-        contenido += `<article class="cajaHija">
+    for (let index = 0; index < 10; index++){
+        contenido += `<li class="">
         <a href="./detalle-peli.html?id=${data.results[index].id}"><img class="peliculas" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="${data.results[index].title}"></a>
         <h3 class="tituloPelicula"><strong>${data.results[index].title}</strong></h3><h4 class="tituloPelicula">${data.results[index].release_date}</h4>
-        </article>`
+        </li>`
     }
 
     populares.innerHTML = contenido;
