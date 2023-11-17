@@ -16,7 +16,7 @@ let conteiner = document.querySelector(".conteiner-reco")
 let boton= document.querySelector(".recomendaciones")
 let recomedacionesDisplay= document.querySelector(".recomenda")
 boton.addEventListener("click", function (e) {
-    let recomendaciones = `https://api.themoviedb.org/3/movie/${id}/recommendations?api_key=${acaVaLaAPIKey}`;
+    let recomendaciones = `https://api.themoviedb.org/3/tv/${id}/recommendations?api_key=${acaVaLaAPIKey}`;
     fetch(recomendaciones)
     .then (function(response){
         return response.json()
@@ -40,7 +40,28 @@ boton.addEventListener("click", function (e) {
 })      
 
 
+let seccionvideo = document.querySelector('.trailer');
+let video = `https://api.themoviedb.org/3/tv/${id}/videos?api_key=${acaVaLaAPIKey}`;
 
+fetch(video)
+.then (function(response){
+    return response.json()
+})
+.then(function(data){
+    console.log(data.results);
+    seccionvideo.innerHTML= `<iframe width="560" height="315" src="https://www.youtube.com/embed/${data.results[0].key}?si=xOwmvX8g3mpcwA9I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`
+    if (video == null){
+        return 'No hay trailers disponibles'
+    }else{
+        for (let index = 0; index < 5; index++) {
+            seccionvideo.innerHTML += `${data.results[index].name}`
+        }
+    }
+
+})
+.catch(function(error){
+    console.log(error)
+})
 
 fetch(url)
     .then(function (response) {
@@ -50,7 +71,7 @@ fetch(url)
         console.log(data)
         let generos = "";
         for (let index = 0; index < data.genres.length; index++) {
-            generos += `${data.genres[index].name}`
+            generos += `<li><a class="linkcruzados" href="./detalle.html">${data.genres[index].name}</a></li>`
 
         }
         portada.src = `https://image.tmdb.org/t/p/w500${data.poster_path}`;
@@ -59,7 +80,7 @@ fetch(url)
         parrafo2.innerText += " " + data.first_air_date;
         parrafo3.innerText = "La serie tiene " + data.number_of_seasons + " temporadas y " + data.number_of_episodes + " episodios";
         parrafo4.innerText +=" " +  data.overview;
-        parrafo5.innerText +=" " + generos;
+        parrafo5.innerHTML +=" " + generos;
 
     })
     .catch(function (error) {
