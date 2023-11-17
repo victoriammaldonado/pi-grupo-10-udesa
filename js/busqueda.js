@@ -5,6 +5,7 @@ let buscador = queryStringObj.get('buscador');
 let busqueda = `https://api.themoviedb.org/3/search/movie?api_key=${acaVaLaAPIKey}&query=${buscador}`
 let documento = document.querySelector(".busqueda")
 let error = document.querySelector(".sinBusqueda")
+let contenido = document.querySelector('.cajaPadre')
 
 fetch(busqueda)
     .then(function (response) {
@@ -18,7 +19,7 @@ fetch(busqueda)
         documento.innerHTML = `Resultado para: ${buscador}`
         for (let index = 0; index < 5; index++) {
            
-            documento.innerHTML += `<article class="cajaHija">
+            contenido.innerHTML += `<article class="cajaHija">
             <a href="./detalle-peli.html?id=${data.results[index].id}"><img class="peliculas" src="https://image.tmdb.org/t/p/w500/${data.results[index].poster_path}" alt="${data.results[index].title}" ></a>
               <h3 class="tituloPelicula"><strong>${data.results[index].title}</strong></h3>
         </article>`

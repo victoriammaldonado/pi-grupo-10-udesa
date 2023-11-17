@@ -2,7 +2,8 @@ let acaVaLaAPIKey = '73bbcaff8fd928767c5142a00f422fa2'
 let queryString = location.search;
 let queryStringObj = new URLSearchParams(queryString);
 let id = queryStringObj.get('id');
-let url = `https://api.themoviedb.org/3/genre/movie/list${id}?api_key=${acaVaLaAPIKey}`
+let url = `https://api.themoviedb.org/3/genre/movie/list?api_key=${acaVaLaAPIKey}` //cambiar link a discover
+let detalle = document.querySelector('.cajaPadre')
 
 
 fetch(url)
@@ -18,7 +19,7 @@ fetch(url)
              <h3 class="tituloPelicula"><strong>${data.results[index].title}</strong></h3>
             </article>`    
         }
-        contenido.innerHTML=contenido;
+        detalle.innerHTML=contenido;
     })
     .catch (function(error){
         console.log(error)
