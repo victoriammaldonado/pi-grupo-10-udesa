@@ -375,4 +375,15 @@ height: 36px;
       .fav {
         margin: 3%;
       }
+
+      .lista_pelis{
+        text-align: center;
+        border-bottom: 0.1px solid rgba(255, 255, 255, 0.214);
+        border-top: 0.1px solid rgba(255, 255, 255, 0.214);
+      }
+      .lista_series{
+        text-align: center;
+        border-bottom: 0.1px solid rgba(255, 255, 255, 0.214);
+        border-top: 0.1px solid rgba(255, 255, 255, 0.214);
+      }
   }
